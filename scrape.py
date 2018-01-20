@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import urllib3
 import sys
+import re
 
 
 class Scrape:
@@ -90,3 +91,22 @@ class Scrape:
             # benchmarks
             spec_json['bench_tbench'] =self.fetch_text_content(spec_soup.find('td', {"data-spec": "tbench"}))
             return spec_json
+
+    def extract_reviews(self, page):
+        if page.status == 200:
+            soup = BeautifulSoup(page.data, 'lxml')
+            reviews = soup.find_all('div', {"data-hook":"review"})
+            rev_string = ''
+            for review in reviews:
+                rev_json = dict()
+                review_soup = BeautifulSoup(str(review), 'lxml')
+                rev_json['body'] = self.fetch_text_content(review_soup.find('span', {"data-hook": "review-body"}))
+                rev_json['title'] = self.fetch_text_content(review_soup.find('a', {"data-hook": "review-title"}))
+                rev_json['star_rating'] = str(self.fetch_text_content(review_soup.find('span', {"class": "a-icon-alt"}))[:1])
+                rev_json['author'] = self.fetch_text_content(review_soup.find('a', {"data-hook": "review-author"}))
+                rev_json['date'] = str(self.fetch_text_content(review_soup.find('span', {"data-hook": "review-date"})))[3:]
+                votes = str(self.fetch_text_content(review_soup.find('span', {"data-hook": "helpful-vote-statement"})))
+                votes = re.findall(r'\d+', votes)
+                rev_json['votes'] = (votes or [None])[0]
+                rev_string += str(rev_json) + '\n'
+            return rev_string
