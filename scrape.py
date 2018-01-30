@@ -23,6 +23,13 @@ class Scrape:
         else:
             ""
 
+    def is_verified(self, element):
+        #print(element)
+        if element:
+            return True
+        else:
+            return False
+
     def extract_phone_specs(self, page):
         if page.status == 200:
             spec_json = dict()
@@ -113,6 +120,7 @@ class Scrape:
                 votes = str(self.fetch_text_content(review_soup.find('span', {"data-hook": "helpful-vote-statement"})))
                 votes = re.findall(r'\d+', votes)
                 rev_json['votes'] = (votes or [None])[0]
+                rev_json['verified_purchase'] = self.is_verified(review_soup.find('span', {"data-hook": "avp-badge"}))
                 rev_string += str(rev_json) + '\n'
                 rev_array.append(rev_json)
             return rev_array

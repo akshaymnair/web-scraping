@@ -3,7 +3,7 @@ from pymongo import MongoClient
 
 client = MongoClient()
 db = client.wizcrow
-collection = db.test
+collection = db.products
 
 def insert_phone_specs(specs):
     collection.insert_one(specs)
