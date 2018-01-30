@@ -25,10 +25,13 @@ class Scrape:
 
     def extract_phone_specs(self, page):
         if page.status == 200:
+            spec_json = dict()
             soup = BeautifulSoup(page.data, 'lxml')
+            # phone name
+            spec_json['product_name'] = self.fetch_text_content(soup.find('h1', {"class": "specs-phone-name-title"}))
+            spec_json['product_type'] = 'phone'
             spec = soup.find_all('div', id='specs-list')
             spec_soup = BeautifulSoup(str(spec), 'lxml')
-            spec_json = dict()
             # network
             spec_json['network_2g'] = self.fetch_text_content(spec_soup.find('td', {"data-spec": "net2g"}))
             spec_json['network_3g'] = self.fetch_text_content(spec_soup.find('td', {"data-spec": "net3g"}))
@@ -90,13 +93,15 @@ class Scrape:
             spec_json['misc_price'] =self.fetch_text_content(spec_soup.find('td', {"data-spec": "price"}))
             # benchmarks
             spec_json['bench_tbench'] =self.fetch_text_content(spec_soup.find('td', {"data-spec": "tbench"}))
+            spec_json['reviews'] = []
             return spec_json
 
-    def extract_reviews(self, page):
+    def extract_amazon_reviews(self, page):
         if page.status == 200:
             soup = BeautifulSoup(page.data, 'lxml')
             reviews = soup.find_all('div', {"data-hook":"review"})
             rev_string = ''
+            rev_array = []
             for review in reviews:
                 rev_json = dict()
                 review_soup = BeautifulSoup(str(review), 'lxml')
@@ -109,4 +114,5 @@ class Scrape:
                 votes = re.findall(r'\d+', votes)
                 rev_json['votes'] = (votes or [None])[0]
                 rev_string += str(rev_json) + '\n'
-            return rev_string
+                rev_array.append(rev_json)
+            return rev_array
