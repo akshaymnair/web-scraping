@@ -1,9 +1,9 @@
-Samsung Galaxy S8::samsung_galaxy_s8-8161.php::Samsung-Galaxy-S8-Unlocked-64GB/product-reviews/B06Y14T5YW
-Google Pixel 2::google_pixel_2-8733.php::Google-Pixel-Unlocked-64gb-Black/product-reviews/B0766GHWM6
-Google Pixel 2 XL::google_pixel_2_xl-8720.php::Google-100-Pixel-Unlocked-64gb/dp/B0766TPHSH
-Samsung Galaxy Note8::samsung_galaxy_note8-8505.php::Samsung-SM-N950UZKAXAA-Version-Factory-Unlocked/product-reviews/B07536MYBQ
-Apple iPhone X::apple_iphone_x-8858.php::Apple-iPhone-GSM-Unlocked-5-8/product-reviews/B075QMZH2L
-Apple iPhone 8 Plus::apple_iphone_8_plus-8131.php::Apple-iPhone-Plus-Fully-Unlocked/product-reviews/B075QNGHS8
-Apple iPhone 8::apple_iphone_8-8573.php::Apple-iPhone-Fully-Unlocked-Gold/product-reviews/B075QJSQLH
-LG V30::lg_v30-8712.php::LG-H930DS-Factory-Unlocked-Smartphone/product-reviews/B077SM6XT8
-OnePlus 5T::oneplus_5t-8912.php::OnePlus-5T-A5010-Warranty-Midnight/product-reviews/B0785H6VKX
+Samsung Galaxy S8::samsung_galaxy_s8-8161.php::Samsung-Galaxy-S8-Unlocked-64GB/product-reviews/B06Y14T5YW::MOBESYV7WFY6K7ZX
+Google Pixel 2::google_pixel_2-8733.php::Google-Pixel-Unlocked-64gb-Black/product-reviews/B0766GHWM6::MOBEYEQGRSSNFFMD
+Google Pixel 2 XL::google_pixel_2_xl-8720.php::Google-100-Pixel-Unlocked-64gb/dp/B0766TPHSH::MOBEYEQGG8PCVY23
+Samsung Galaxy Note8::samsung_galaxy_note8-8505.php::Samsung-SM-N950UZKAXAA-Version-Factory-Unlocked/product-reviews/B07536MYBQ::MOBFY4NYWWE9ZFFN&source
+Apple iPhone X::apple_iphone_x-8858.php::Apple-iPhone-GSM-Unlocked-5-8/product-reviews/B075QMZH2L::MOBEXRGVCYGG2KXA
+Apple iPhone 8 Plus::apple_iphone_8_plus-8131.php::Apple-iPhone-Plus-Fully-Unlocked/product-reviews/B075QNGHS8::MOBEXRGVQKBREZP8
+Apple iPhone 8::apple_iphone_8-8573.php::Apple-iPhone-Fully-Unlocked-Gold/product-reviews/B075QJSQLH::MOBEXRGVZWHDW2RQ
+LG V30::lg_v30-8712.php::LG-H930DS-Factory-Unlocked-Smartphone/product-reviews/B077SM6XT8::
+OnePlus 5T::oneplus_5t-8912.php::OnePlus-5T-A5010-Warranty-Midnight/product-reviews/B0785H6VKX::

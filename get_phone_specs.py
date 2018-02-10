@@ -14,8 +14,8 @@ def main():
     f = open(SPECS_STORAGE_PATH + SPECS_FILE_NAME, 'w', encoding='utf-8')
 
     for phone in phones:
-        print(phone[0])
-        page = scrape_obj.scrape(GSM_ARENA_BASE_URL + phone[1])
+        print('Fetching %s phone specs from gsm arena' % phone[0])
+        page = scrape_obj.scrape(GSM_ARENA_BASE_URL + phone[1], '', '')
         specs = scrape_obj.extract_phone_specs(page)
         # TODO update db
         mongo.insert_phone_specs(specs)

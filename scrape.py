@@ -2,16 +2,19 @@ from bs4 import BeautifulSoup
 import urllib3
 import sys
 import re
-
+import json
 
 class Scrape:
     def __init__(self):
         urllib3.disable_warnings()
         self.http = urllib3.PoolManager()
 
-    def scrape(self, url):
+    def scrape(self, url, fields, headers):
         try:
-            page = self.http.request('GET', url)
+            if fields and headers:
+                page = self.http.request('GET', url , fields=fields, headers=headers)
+            else:
+                page = self.http.request('GET', url)
         except urllib3.exceptions.HTTPError as e:
             print("Http Error: "+str(e.reason))
             sys.exit(1)
@@ -117,10 +120,31 @@ class Scrape:
                 rev_json['star_rating'] = str(self.fetch_text_content(review_soup.find('span', {"class": "a-icon-alt"}))[:1])
                 rev_json['author'] = self.fetch_text_content(review_soup.find('a', {"data-hook": "review-author"}))
                 rev_json['date'] = str(self.fetch_text_content(review_soup.find('span', {"data-hook": "review-date"})))[3:]
+                rev_json['source'] = 'amazon.com'
                 votes = str(self.fetch_text_content(review_soup.find('span', {"data-hook": "helpful-vote-statement"})))
                 votes = re.findall(r'\d+', votes)
-                rev_json['votes'] = (votes or [None])[0]
+                rev_json['votes'] = (votes or [0])[0]
                 rev_json['verified_purchase'] = self.is_verified(review_soup.find('span', {"data-hook": "avp-badge"}))
                 rev_string += str(rev_json) + '\n'
+                rev_array.append(rev_json)
+            return rev_array
+
+    def extract_flipkart_reviews(self, page):
+        data = page.data.decode('utf-8')
+        data = json.loads(data)
+        reviews = data['RESPONSE']['data']
+        rev_array = []
+        if page.status == 200:
+            for review in reviews:
+                review = review['value']
+                rev_json = dict()
+                rev_json['body'] = review['text']
+                rev_json['title'] = review['title']
+                rev_json['star_rating'] = review['rating']
+                rev_json['author'] = review['author']
+                rev_json['date'] = review['created']
+                rev_json['votes'] = review['helpfulCount']
+                rev_json['verified_purchase'] = 'true' if review['certifiedBuyer'] == 'True' else 'false'
+                rev_json['source'] = 'flipkart.com'
                 rev_array.append(rev_json)
             return rev_array

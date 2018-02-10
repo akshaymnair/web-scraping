@@ -1,0 +1,105 @@
+{  
+   'action':None,
+   'metaData':None,
+   'tracking':None,
+   'value':{  
+      'type':'ProductReviewValue',
+      'author':'praveen bhat',
+      'certifiedBuyer':True,
+      'created':'8 Aug, 2016',
+      'downvote':{  
+         'action':{  
+            'fallback':None,
+            'loginType':'LEGACY_LOGIN',
+            'omnitureData':None,
+            'originalUrl':None,
+            'params':{  
+               'reviewDomain':'PRODUCT',
+               'source':'prp',
+               'reviewId':'da185d1e-eb36-44e1-9a1a-03aa14d2d5bf',
+               'vote':'DOWN'
+            },
+            'screenType':None,
+            'tracking':{  
+
+            },
+            'type':'REVIEW_VOTE',
+            'url':None
+         },
+         'metaData':None,
+         'tracking':None,
+         'value':{  
+            'type':'VoteValue',
+            'count':930,
+            'isSelected':False
+         }
+      },
+      'helpfulCount':3125,
+      'id':'da185d1e-eb36-44e1-9a1a-03aa14d2d5bf',
+      'images':[  
+
+      ],
+      'rating':4,
+      'reportAbuse':{  
+         'action':{  
+            'fallback':None,
+            'loginType':'LEGACY_LOGIN',
+            'omnitureData':None,
+            'originalUrl':None,
+            'params':{  
+               'reviewDomain':'PRODUCT',
+               'source':'prp',
+               'reviewId':'da185d1e-eb36-44e1-9a1a-03aa14d2d5bf',
+               'vote':'ABUSE'
+            },
+            'screenType':None,
+            'tracking':{  
+
+            },
+            'type':'REVIEW_VOTE',
+            'url':None
+         },
+         'metaData':None,
+         'tracking':None,
+         'value':{  
+            'type':'VoteValue',
+            'count':0,
+            'isSelected':False
+         }
+      },
+      'reviewPropertyMap':{  
+         'CERTIFIED_BUYER':True
+      },
+      'text':'After using about 15 days, I feel this phone is very good for its battery,  RAM and general performance.  Battery comes for more than a  day even after using heavily. No lagging in  performance. \n\nOne star less for its speakers as they are slightly low compared to others.',
+      'title':'Very good mobile from Samsung',
+      'totalCount':4055,
+      'upvote':{  
+         'action':{  
+            'fallback':None,
+            'loginType':'LEGACY_LOGIN',
+            'omnitureData':None,
+            'originalUrl':None,
+            'params':{  
+               'reviewDomain':'PRODUCT',
+               'source':'prp',
+               'reviewId':'da185d1e-eb36-44e1-9a1a-03aa14d2d5bf',
+               'vote':'UP'
+            },
+            'screenType':None,
+            'tracking':{  
+
+            },
+            'type':'REVIEW_VOTE',
+            'url':None
+         },
+         'metaData':None,
+         'tracking':None,
+         'value':{  
+            'type':'VoteValue',
+            'count':3125,
+            'isSelected':False
+         }
+      },
+      'url':'/reviews/da185d1e-eb36-44e1-9a1a-03aa14d2d5bf'
+   }
+}
